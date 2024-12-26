@@ -1,0 +1,431 @@
+ls
+ls
+pwd
+cd srcs/
+ls
+pwd
+env | grep PWD
+ls
+pwd
+env
+exit
+ls
+pwd
+ls
+kkds
+echo $?
+/kkf
+echo $?
+ls
+ls
+exit
+ls
+ls
+echo $?
+exit
+exit
+<< ls
+cat << ls
+ls
+ls
+<< ls
+ls
+<< ls
+ls
+ls
+pwd
+<< ls
+ls
+ls
+pwd
+ls
+ls
+pwd
+cat << ls << eof
+ls
+pwd
+<< ls
+echo $?
+ls
+pwd
+<< ls
+ls
+pwd
+<< ls
+ls
+<< ls
+ev
+env
+env skk
+env ddldl
+ls
+<< ls
+ls
+ls
+pwd
+dkdks
+kkdskd;ddk
+kkdk/
+echo $?
+ls
+ls
+ls
+ls
+env
+export
+ls
+ls
+ls
+ls
+exit
+exit "   42"
+exit " 42" df
+ls
+ls
+pwd
+ls
+pwd
+<< l
+sldld
+jdjjf
+echo $?
+<< ls
+echo $?
+ls
+pwd
+ls
+pwd
+echo $HOME$
+echo $$HOME
+lslslslslslslslsls
+ls
+pwd
+<< ls
+ls
+pwd
+lsddsd
+ls
+<< ls
+echo $?
+cat << ls << eof | pwd
+cat << ls << eof | pwd
+echo $?
+ls
+ls
+pwd
+skddskd
+echo $?
+ls
+pwd
+exit
+ls
+pwd
+ls
+pwd
+ls -la
+pwd kdk
+ls
+pwd
+kskdks;d
+ls
+pwd
+dlfkdf
+export | cat -----e
+echo djfdj | pwd| echo sjdj> donto.txt
+ls
+cat donto.txt 
+rm donto.txt 
+ls
+ls
+pwd
+dsdd
+ls
+pwd
+kddsd
+ls
+pwd
+ls
+ls
+pwd
+kkd
+ls
+pwd
+skdskd
+echo $?
+exit "   42 "
+exit 0000000000000000000000000000000000000000001
+ls
+slddd
+pwd
+kskdkkd
+skdkk
+ls
+pwd
+echo $?
+.
+echo $?
+ls
+pwd
+ls
+ls
+pwd
+ls
+pwd
+sdkkds
+ls
+pwd
+sdkdkd
+ls
+ls
+psdk
+pwd
+ksdksk
+s
+ls
+echo donto >> donto.tx
+cat donto.tx 
+echo donto >> donto.tx
+cat donto.tx 
+rm donto.tx 
+ls
+ls
+pwd
+skkd
+ls
+kdff
+lfd
+pwd
+ls
+pwd
+ksddd
+ls
+sdkdsd
+kdkskd
+ls
+ls
+ls
+pwd
+kskkd
+ls
+echo $HOME
+echo skdndnd '$HOME' "$USER SDJD"
+echo -N skdndnd '$HOME' "$USER SDJD"
+echo -n skdndnd '$HOME' "$USER SDJD"
+echo -nnnn skdndnd '$HOME' "$USER SDJD"
+export DONTO
+enc
+env
+unset DONTO
+env
+export
+export DONTO
+export
+unset DONTO
+export DONTO
+export
+env
+env | grep DONTO
+ls
+pwd
+sdkdkd
+dskddmmc
+ls
+pwd
+skdkd
+ls
+ls
+pwd
+sjdj
+echo #
+echo #$HOME
+echo fdff
+echo fdff$HOME
+echo sjdd$HOME
+echo #$HOME
+exit
+echo #$HOME
+echo #$ffldf
+echo #$ffldf
+echo #$ffldf
+echo #$ffldf
+echo #$ffldf
+echo #$ffldf
+echo #$ffldf
+echo #$ffldf
+echo #$ffldf
+echo #$ffldf
+echo #$ffldf
+echo #$ffldf
+echo #$ffldf
+echo #$ffldf
+echo #$ffldf
+echo #$ffldf
+echo #$ffldf
+echo #$sdddk
+echo #$skdd
+echo #$skdd
+echo $skdd
+echo $skdd
+echo $ddfkffk
+echo
+echo ksdk
+echo $HOME
+echo dfdf$HOME
+echo dfdf$kdkf
+echo jjdj$HOME
+echo jjdj$dfkkf
+n
+echo jjjf$jffj
+echo jdjfj$hfhf
+echo kdkfkf$djfjjd
+echo kdkfkf$djfjjd
+echo kdfffk$jdjf
+echo jjfj$hdhf
+echo dffd$jsjd
+echo dffd$jsjd
+echo dfhfh$sdjdjd
+echo $HOME
+echo dnfj$hdhf
+echo sjdj$jjfd
+echo jjjd$jsdj
+echo kkdkd$jdjf
+echo djjf$dfjj
+echo jjfjf$jfjf
+echo kdkf$djjf
+echo fdfjf$jdjf
+echo djfjjf$jjf
+echo djfjjf$jjf
+djfjjf$jjf
+echo hhdfhf$jdfjf
+ls
+echo jdkfk$jjfd
+echo djdfj$dfj
+echo dfjf$jdfj
+./minishell 
+cd ..
+ls
+echo jdfjf$jdfjf
+echo jfj$jjfjdf
+echo djjf$dkfkf
+echo djjf$dkfkf
+echo djjf$dkfkf
+echo jfjdfj$kfff
+echo jfjdfj$kfff
+echo jfjdfj$kfff
+echo jfjdfj$kfff
+echo jfjdfj$kfff
+echo jfjdfj$kfff
+echo jfjdfj$kfff
+echo jfjdfj$kfff
+echo jfjdfj$kfff
+echo $kdfk
+echo "$kdfk"
+echo jfjdfj$kfff
+echo dffj$djffj
+echo dffj$djffj
+echo dffj$djffj
+echo dffj$djffj
+echo dffj$djffj
+echo dffj$djffj
+echo dffj$djffj
+ls
+echo dff$jfjf
+ls
+echo jdj$jdfdjf
+echo jjf$djjf
+echo djffj$dff
+echo djffj$dff
+echo djffj$dff
+echo djffj$dff
+echo $
+echo $jjfjf
+echo $jfjf
+echo $jfjf
+echo $jfjf
+echo $HOME
+echo $skkd
+echo $skkd
+echo sd$skkd
+echo jjdd$jdfj
+echo $jjdd
+echo $jdffj
+echo $dkfk
+echo $ffjjf
+echo $ffjjf
+echo $jjdf
+echo jjdf
+echo $HOME
+echo $jjdf
+echo $jjdf
+echo $jjdf
+echo $jjdf
+echo $jjdf
+echo $jjdf
+ls
+echo $djfj
+echo $djfj
+echo $djfj
+echo $djfj
+echo $djfj
+echo $djfj
+echo $djfj
+echo $djfj
+echo $djfj
+echo $djfj
+echo $djfj
+echo $djfj
+echo $djfj
+echo $djfj
+echo $djfj
+echo $djfj
+echo $djfj
+echo $jfdj
+echo $ffkf
+echo $dfkfdkf
+ls
+echo $jdf
+echo dffjf$jdf
+echo jsj
+echo $HOME
+echo dff$HOME
+echo dff$dff
+echo $dff
+echo sjdjd
+echo $HOME
+echo $HOME
+echo $HOME
+echo $HOME
+echo $HOME
+echo $HOME
+echo $HOME 
+echo $HOME 
+echo $HOME
+echo $HOME
+echo $HOME
+echo $HOME
+echo $HOME
+echo $HOME
+echo $HOME
+echo $HOME
+echo $HOME
+echo $HOME
+echo k
+echo $HOME
+echo $HOME
+echo $HOME
+echo $HOME
+echo $HOME
+echo $kdkd
+echo $kdkd
+echo $kdkd
+echo $kdkd
+echo $kdkd
+echo $HOME
+echo $HOME
+echo $skkd
+echo fdsf
+echo $skkd
+echo $skkd
+echo $skkd
+echo $skkd
+echo $skkd
