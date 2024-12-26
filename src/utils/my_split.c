@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   my_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 11:48:11 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/12/26 14:02:33 by pmihangy         ###   ########.fr       */
+/*   Updated: 2024/12/26 20:59:18 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ size_t	count_word(const char *str, char c)
 	}
 	return (words);
 }
-
 
 size_t	len_word(const char *str, char c, size_t start)
 {

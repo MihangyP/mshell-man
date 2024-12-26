@@ -3,61 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <pmihangy@student.42antanana      +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 16:12:06 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/02/27 10:32:12 by pmihangy         ###   ########.fr       */
+/*   Created: 2024/02/21 09:18:04 by irazafim          #+#    #+#             */
+/*   Updated: 2024/12/26 20:34:34 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_in(char const c, char const *set)
-{
-	int	i;
-
-	i = 0;
-	while (set[i])
-	{
-		if (set[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-static char	*empty_string(void)
-{
-	char	*str;
-
-	str = malloc(sizeof(char));
-	if (!str)
-		return (NULL);
-	str[0] = '\0';
-	return (str);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	size_t	len_s1;
 	size_t	start;
 	size_t	end;
-	size_t	len;
-	char	*str;
 
-	if (!s1 || !set)
+	if (!s1)
 		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
+	len_s1 = ft_strlen(s1);
 	start = 0;
-	while (is_in(s1[start], set))
+	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
-	len = ft_strlen(s1);
-	end = len - 1;
-	if (start == len)
-		return (empty_string());
-	while (is_in(s1[end], set))
+	if (s1[start] == '\0')
+		return (ft_strdup(""));
+	end = len_s1 - 1;
+	while (end > start && ft_strchr(set, s1[end]))
 		end--;
-	str = malloc((end - start + 2) * sizeof(char));
-	if (NULL == str)
-		return (NULL);
-	ft_strlcpy(str, (s1 + start), (end - start + 2));
-	return (str);
+	return (ft_substr(s1, start, end - start + 1));
 }

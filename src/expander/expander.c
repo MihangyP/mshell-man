@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   expander.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 11:13:56 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/12/26 14:07:36 by pmihangy         ###   ########.fr       */
+/*   Updated: 2024/12/26 21:51:15 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ t_token	*expand_tokens(t_token *tokens, char **env, int exit_code)
 	{
 		if (skip_next)
 			skip_next = process_skip(current, &params, 0);
-		else if (current->type == TOKEN_HEREDOC)
+		else if (current->type == HEREDOC)
 			skip_next = process_skip(current, &params, 1);
-		else if (current->type == TOKEN_WORD)
+		else if (current->type == ARG)
 			params.expanded_tokens = process_word(current, &params);
 		else
 			params.expanded_tokens = process_heredoc(current,
@@ -70,12 +70,12 @@ t_token	*split_word(char *word)
 	i = 0;
 	split = my_split(word, ' ');
 	if (split[i] == NULL)
-		return (free_arr(split), create_token(TOKEN_WORD, "", &i, -1));
+		return (free_arr(split), create_token(ARG, "", &i, -1));
 	while (split[i] != NULL)
 	{
 		word_without_quotes = remove_quotes(split[i]);
 		process_token_split(&token, &last,
-			create_token(TOKEN_WORD, word_without_quotes, NULL, -1));
+			create_token(ARG, word_without_quotes, NULL, -1));
 		free(word_without_quotes);
 		i++;
 	}
@@ -97,7 +97,7 @@ t_token	*process_word(t_token *current, t_expand_params *params)
 	else
 	{
 		word_without_quotes = remove_quotes(expanded.value);
-		new_token = create_token(TOKEN_WORD, word_without_quotes, &tmp, -1);
+		new_token = create_token(ARG, word_without_quotes, &tmp, -1);
 		free(word_without_quotes);
 	}
 	params->expanded_tokens = add_new_token(params->expanded_tokens,

@@ -3,91 +3,84 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <pmihangy@student.42antanana      +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 14:53:22 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/02/27 10:30:37 by pmihangy         ###   ########.fr       */
+/*   Created: 2024/02/21 10:49:07 by irazafim          #+#    #+#             */
+/*   Updated: 2024/12/26 20:27:13 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_tokens(char const *s, char c)
+static size_t	count_words(char const *s, char c)
 {
-	size_t	count;
-	size_t	i;
+	size_t	words;
+	int		in_words;
 
-	count = 0;
-	i = 0;
-	while (*(s + i))
+	in_words = 0;
+	words = 0;
+	while (*s)
 	{
-		if (*(s + i) != c)
+		if (*s != c && !in_words)
 		{
-			count++;
-			while (*(s + i) && *(s + i) != c)
-				i++;
+			in_words = 1;
+			words++;
 		}
-		else if (*(s + i) == c)
-			i++;
+		else if (*s == c)
+			in_words = 0;
+		s++;
 	}
-	return (count);
+	return (words);
 }
 
-static size_t	get_token_len(char const *s, char c)
+static size_t	len_word(char const *s, char c, int start)
 {
 	size_t	i;
 
 	i = 0;
-	while (*(s + i) && *(s + i) != c)
+	while (s[start + i] != c && s[start + i] != '\0')
 		i++;
 	return (i);
 }
 
-static void	free_array(size_t i, char **array)
-{
-	while (i > 0)
-	{
-		i--;
-		free(*(array + i));
-	}
-	free(array);
-}
-
-static char	**fill(char const *s, char c, char **array, size_t words)
+static void	split(char const *s, char c, size_t words, char **tab)
 {
 	size_t	i;
 	size_t	j;
+	size_t	k;
 
 	i = 0;
 	j = 0;
-	while (i < words)
+	k = 0;
+	while (j < words)
 	{
-		while (*(s + j) && *(s + j) == c)
-			j++;
-		*(array + i) = ft_substr(s, j, get_token_len(s + j, c));
-		if (!*(array + i))
+		while (s[i] == c)
+			i++;
+		tab[j] = (char *)malloc(sizeof(char) * (len_word(s, c, i) + 1));
+		while (k < len_word(s, c, i) + 1 && s[i + k] != '\0' && s[i + k] != c)
 		{
-			free_array(i, array);
-			return (NULL);
+			tab[j][k] = s[i + k];
+			k++;
 		}
-		while (*(s + j) && *(s + j) != c)
-			j++;
-		i++;
+		tab[j][k] = '\0';
+		k = 0;
+		i += len_word(s, c, i);
+		j++;
 	}
-	*(array + i) = NULL;
-	return (array);
+	tab[j] = NULL;
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**token_v;
 	size_t	words;
+	char	**tab;
 
-	if (!s)
+	if (s == NULL)
 		return (NULL);
-	words = count_tokens(s, c);
-	token_v = (char **)malloc(sizeof(char *) * (words + 1));
-	if (!token_v)
+	words = count_words(s, c);
+	tab = (char **)malloc(sizeof(char *) * (words + 1));
+	if (tab == NULL)
 		return (NULL);
-	return (fill(s, c, token_v, words));
+	split(s, c, words, tab);
+	return (tab);
 }

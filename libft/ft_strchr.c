@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <pmihangy@student.42antanana      +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 16:03:31 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/02/28 09:07:47 by pmihangy         ###   ########.fr       */
+/*   Created: 2024/02/20 11:40:41 by irazafim          #+#    #+#             */
+/*   Updated: 2024/12/26 20:27:18 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,19 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	size_t	i;
 
-	i = -1;
-	while (s[++i])
-		if (s[i] == (unsigned char)c)
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == (char )c)
 			return ((char *)&s[i]);
-	if (s[i] == (unsigned char)c)
-		return ((char *)&s[i]);
+		i++;
+	}
+	if (c == '\0')
+	{
+		if (s[i] == '\0')
+			return ((char *)&s[i]);
+	}
 	return (NULL);
 }
-/*char	*ft_strchr(const char *s, int c)*/
-/*{*/
-	/*while (*s)*/
-	/*{*/
-		/*if (*(char *)s == (char)c)*/
-			/*return ((char *)s);*/
-		/*s++;*/
-	/*}*/
-	/*if (*(char *)s == (char)c)*/
-		/*return ((char *)s);*/
-	/*return (NULL);*/
-/*}*/

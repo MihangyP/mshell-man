@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirections.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 11:01:18 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/12/26 12:41:01 by pmihangy         ###   ########.fr       */
+/*   Updated: 2024/12/26 22:08:11 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,20 +99,20 @@ char	*check_path(char **path_list, char *cmd)
 	return (0);
 }
 
-void	handle_redirection(t_token **tokens, t_redirection *redirection,
+void	handle_redirection(t_token **tokens, t_redir *redirection,
 	int *file_count, int count)
 {
 	redirection[*file_count].fd = (*tokens)->fd;
-	if ((*tokens)->type == TOKEN_REDIR_IN)
-		redirection[*file_count].type_redirection = REDIRECTION_IN;
-	if ((*tokens)->type == TOKEN_REDIR_OUT)
-		redirection[*file_count].type_redirection = REDIRECTION_OUT;
-	if ((*tokens)->type == TOKEN_REDIR_APPEND)
-		redirection[*file_count].type_redirection = REDIRECTION_APPEND;
-	if ((*tokens)->type == TOKEN_HEREDOC)
-		redirection[*file_count].type_redirection = REDIRECTION_HEREDOC;
+	if ((*tokens)->type == REDIRECT_IN)
+		redirection[*file_count].type_redirection = IN;
+	if ((*tokens)->type == REDIRECT_OUT)
+		redirection[*file_count].type_redirection = OUT;
+	if ((*tokens)->type == REDIRECT_APPEND)
+		redirection[*file_count].type_redirection = APPEND;
+	if ((*tokens)->type == HEREDOC)
+		redirection[*file_count].type_redirection = O_HEREDOC;
 	*tokens = (*tokens)->next;
-	if ((*tokens)->type == TOKEN_WORD && count != 0)
+	if ((*tokens)->type == ARG && count != 0)
 	{
 		redirection[*file_count].target = ft_strdup((*tokens)->value);
 		(*file_count)++;

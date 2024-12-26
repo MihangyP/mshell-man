@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <pmihangy@student.42antanana      +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 10:15:13 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/02/21 13:44:37 by pmihangy         ###   ########.fr       */
+/*   Created: 2024/02/19 11:56:58 by irazafim          #+#    #+#             */
+/*   Updated: 2024/12/26 20:24:47 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

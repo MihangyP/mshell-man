@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:30:08 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/12/26 12:40:23 by pmihangy         ###   ########.fr       */
+/*   Updated: 2024/12/26 22:08:48 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	free_token(t_token *token)
 	token = NULL;
 }
 
-void	free_redirection(t_redirection *redirection)
+void	free_redirection(t_redir *redirection)
 {
 	int	i;
 

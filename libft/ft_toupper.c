@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <pmihangy@student.42antanana      +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 14:41:09 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/02/21 13:46:48 by pmihangy         ###   ########.fr       */
+/*   Created: 2024/02/20 11:20:55 by irazafim          #+#    #+#             */
+/*   Updated: 2024/12/26 20:34:52 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_toupper(int c)
 {
-	if (c > 96 && c < 123)
+	if (c >= 97 && c <= 122)
 		return (c - 32);
 	return (c);
 }

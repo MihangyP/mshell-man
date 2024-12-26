@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 09:41:11 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/12/26 09:52:41 by pmihangy         ###   ########.fr       */
+/*   Updated: 2024/12/26 19:52:03 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,15 @@ int	count_next_line_size(char *tmp)
 	return (count);
 }
 
-void	ft_putendl_fd(char *s, int fd)
-{
-	int	i;
+// void	ft_putendl_fd(char *s, int fd)
+// {
+// 	int	i;
 
-	i = 0;
-	while (s[i])
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
-	write(fd, "\n", 1);
-}
+// 	i = 0;
+// 	while (s[i])
+// 	{
+// 		write(fd, &s[i], 1);
+// 		i++;
+// 	}
+// 	write(fd, "\n", 1);
+// }

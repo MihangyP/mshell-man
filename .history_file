@@ -429,3 +429,101 @@ echo $skkd
 echo $skkd
 echo $skkd
 echo $skkd
+dasd$asda
+echo dasd$asda
+clear
+make fclean
+clear
+make
+clear
+exit
+clear
+echo dada$asda
+echo $asda
+exit
+echo dada$ec
+exit
+n
+echo dada$ffds
+echo dada$ffds
+echo dada$ffds
+echo da$dasd
+echo test$ads
+$dffkk
+$dfk
+echo $kfkdfk
+$df
+echo $kdf
+echo dsadas$fdf
+echo $kkd
+echo jsjd
+echo $jsjd
+echo $dfj
+echo jdffj$jjfjf
+echo jdffj$HOME
+echo #$HOME
+echo $asda$HOME$USER$USER$ds
+clear
+exit
+
+$sadasaf
+echo $dadas
+echo $HOME$das$$
+echo $HOME$das$aew
+echo $HOME$das$aew$USER
+clear
+make fclean
+clear
+exit
+pwd
+pwd w
+pwd wsadasdc
+bash
+pwd -15234545
+pwd -1
+echo $?
+bash
+echo $fe
+echo $fe$HOME
+echo $$fe$HOME
+bash
+echo $$
+clear
+
+exit
+cat < foo
+echo $?
+bash
+clear
+cat << is << notis
+ls src << is << notis
+clear
+make re
+make
+clear
+echo $type
+echo type
+echo salut | grep "t"
+echo salut | grep "t" | wc -l
+clear
+exit
+echo salut les gens > out
+echo bien le salut >> out
+echo a trs bientot >> out
+cat out
+clear
+grep "les" < out
+grep "ns" < out
+grep "sal" < out
+grep "tr" < out
+grep "bien" < out
+grep "bien" < out | wc -l
+clear
+exit
+salut > out
+echo salut > out
+cat out
+clear
+<<ls
+echo ,DAsdailk><FMM<M<<<><M<>>
+clear

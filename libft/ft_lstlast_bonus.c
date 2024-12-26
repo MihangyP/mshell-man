@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <pmihangy@student.42antanana      +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 12:40:27 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/02/25 10:06:36 by pmihangy         ###   ########.fr       */
+/*   Created: 2024/02/27 09:50:53 by irazafim          #+#    #+#             */
+/*   Updated: 2024/12/26 20:25:47 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*curr;
-
-	curr = lst;
-	if (!curr)
+	if (!lst)
 		return (NULL);
-	while (curr->next)
-		curr = curr->next;
-	return (curr);
+	while (lst->next)
+	{
+		lst = lst->next;
+	}
+	return (lst);
 }

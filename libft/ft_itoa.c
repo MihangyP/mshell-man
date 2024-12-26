@@ -3,63 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <pmihangy@student.42antanana      +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 09:58:53 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/02/27 10:32:30 by pmihangy         ###   ########.fr       */
+/*   Created: 2024/02/22 14:06:43 by irazafim          #+#    #+#             */
+/*   Updated: 2024/12/26 20:25:11 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_digits(int n)
+static int	verify_n(int n)
 {
-	size_t	i;
-
-	i = 0;
-	while (n)
-	{
-		n /= 10;
-		i++;
-	}
-	return (i);
+	if (n <= 0)
+		return (1);
+	return (0);
 }
 
-static void	insert(char *str_num, long int num, size_t digits)
+static int	after_malloc(char *str, int n)
 {
-	if (num == 0)
+	if (n < 0)
 	{
-		str_num[0] = '0';
-		str_num[1] = '\0';
+		str[0] = '-';
+		return (-n);
 	}
-	while (digits--)
-	{
-		*(str_num + digits) = num % 10 + 48;
-		num /= 10;
-	}
+	return (n);
 }
 
 char	*ft_itoa(int n)
 {
-	char		*str_num;
-	size_t		digits;
-	long int	num;
+	int		len;
+	int		tmp;
+	char	*str;
 
-	num = n;
-	digits = count_digits(n);
-	if (n < 0)
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	len = verify_n(n);
+	tmp = n;
+	while (tmp)
 	{
-		num *= -1;
-		digits++;
+		tmp /= 10;
+		len++;
 	}
-	if (num == 0)
-		digits++;
-	str_num = (char *)malloc(sizeof(char) * (digits + 1));
-	if (NULL == str_num)
+	str = (char *)ft_calloc(len + 1, sizeof(char));
+	if (str == NULL)
 		return (NULL);
-	*(str_num + digits) = 0;
-	insert(str_num, num, digits);
-	if (n < 0)
-		*(str_num + 0) = '-';
-	return (str_num);
+	n = after_malloc(str, n);
+	str[len] = '\0';
+	while (len-- && str[len] != '-')
+	{
+		str[len] = n % 10 + '0';
+		n /= 10;
+	}
+	return (str);
 }

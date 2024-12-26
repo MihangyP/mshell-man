@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <pmihangy@student.42antanana      +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 09:49:54 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/02/21 13:44:14 by pmihangy         ###   ########.fr       */
+/*   Created: 2024/02/19 10:55:01 by irazafim          #+#    #+#             */
+/*   Updated: 2024/12/26 20:24:58 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int	ft_isdigit(int c)
 {
-	return (c > 47 && c < 58);
+	if (!(c >= 48 && c <= 57))
+		return (0);
+	return (1);
 }

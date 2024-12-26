@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 11:38:54 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/12/26 13:22:17 by pmihangy         ###   ########.fr       */
+/*   Updated: 2024/12/26 21:54:27 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ t_ast_node	*parse_token(t_token **tokens, t_ast_node *cmd)
 	}
 	count_type_token(*tokens, count);
 	init_args_input_output_file(&cmd, count);
-	while (tokens != NULL && (*tokens)->type != TOKEN_PIPE
-		&& (*tokens)->type != TOKEN_EOF)
+	while (tokens != NULL && (*tokens)->type != PIPE
+		&& (*tokens)->type != M_EOF)
 	{
 		process_token(tokens, cmd, count, counts);
 		*tokens = (*tokens)->next;
@@ -65,7 +65,7 @@ t_ast_node	*parse_pipeline(t_token **tokens)
 	t_ast_node	*pipe;
 
 	left = parse_command(tokens);
-	if (*tokens != NULL && (*tokens)->type == TOKEN_PIPE)
+	if (*tokens != NULL && (*tokens)->type == PIPE)
 	{
 		pipe = init_node(AST_PIPE);
 		pipe->left = left;

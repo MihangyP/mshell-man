@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 12:24:10 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/12/26 13:36:20 by pmihangy         ###   ########.fr       */
+/*   Updated: 2024/12/26 21:54:36 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	check_directory_error(char *path, char *cmd)
 int	check_pipe(t_token *current_token, int arg_count)
 {
 	if (current_token->next == NULL || arg_count == 0
-		|| current_token->next->type == TOKEN_EOF)
+		|| current_token->next->type == M_EOF)
 	{
 		ft_putstr_fd("Syntax error: expected command after pipe.\n", 2);
 		return (0);

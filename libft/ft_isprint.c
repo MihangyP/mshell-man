@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <pmihangy@student.42antanana      +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 10:26:43 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/02/21 13:44:45 by pmihangy         ###   ########.fr       */
+/*   Created: 2024/02/19 12:01:00 by irazafim          #+#    #+#             */
+/*   Updated: 2024/12/26 20:25:06 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isprint(int c)
 {
-	return (c > 31 && c < 127);
+	return (c >= 32 && c <= 126);
 }

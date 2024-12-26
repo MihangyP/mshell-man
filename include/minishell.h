@@ -27,26 +27,26 @@ enum	e_ast
 	AST_PIPE,
 };
 
-typedef enum e_type_redirection
+typedef enum e_opt_redir
 {
-	REDIRECTION_IN,
-	REDIRECTION_OUT,
-	REDIRECTION_APPEND,
-	REDIRECTION_HEREDOC,
-}	t_type_redirection;
+	IN,
+	OUT,
+	APPEND,
+	O_HEREDOC,
+}	t_opt_redir;
 
-typedef enum e_tokentype
+typedef enum e_token_opt
 {
-	TOKEN_WORD,
-	TOKEN_PIPE,
-	TOKEN_REDIR_IN,
-	TOKEN_REDIR_OUT,
-	TOKEN_REDIR_IN_OUT,
-	TOKEN_REDIR_APPEND,
-	TOKEN_HEREDOC,
-	TOKEN_NEWLINE,
-	TOKEN_EOF
-}	t_tokentype;
+	ARG,
+	PIPE,
+	REDIRECT_IN,
+	REDIRECT_OUT,
+	REDIRECT_IN_OUT,
+	REDIRECT_APPEND,
+	HEREDOC,
+	M_NEWLINE,
+	M_EOF
+}	t_token_opt;
 
 // Structures
 typedef struct s_exec_status
@@ -57,24 +57,24 @@ typedef struct s_exec_status
 
 typedef struct s_token
 {
-	t_tokentype		type;
+	t_token_opt		type;
 	char			*value;
 	int				fd;
 	struct s_token	*next;
 }	t_token;
 
-typedef struct s_redirection
+typedef struct s_redir
 {
-	t_type_redirection		type_redirection;
+	t_opt_redir		type_redirection;
 	int						fd;
 	char					*target;
-}	t_redirection;
+}	t_redir;
 
 typedef struct s_ast_node
 {
 	int					type;
 	char				**args;
-	t_redirection		*redirection;
+	t_redir *redirection;
 	struct s_ast_node	*left;
 	struct s_ast_node	*right;
 }	t_ast_node;
@@ -135,7 +135,7 @@ int				my_is_space(char c);
 int				is_special_char(char c);
 int				get_fd(char *input, int *index);
 
-t_token			*create_token(t_tokentype type, const char *value, int *index,
+t_token			*create_token(t_token_opt type, const char *value, int *index,
 					int fd);
 t_token			*get_next_token(char *input, int *index);
 t_token			*lexer(char *input);
@@ -210,10 +210,10 @@ void			process_token(t_token **tokens, t_ast_node *cmd, int *count,
 					int *counts);
 void			count_redirection(t_token **tokens, int *count);
 void			count_type_token(t_token *tokens, int *count);
-void			handle_redirection(t_token **tokens, t_redirection *redirection,
+void			handle_redirection(t_token **tokens, t_redir *redirection,
 					int *file_count, int count);
 t_ast_node		*parse(t_token *tokens);
-int				is_redirection(t_tokentype type);
+int				is_redirection(t_token_opt type);
 int				is_delimiter(const char *line, const char *heredoc_delimiter);
 int				is_invalid_redirection(t_token *token);
 int				determine_expansion(t_token *current_token, char *tmp);

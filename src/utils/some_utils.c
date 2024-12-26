@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   some_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <pmihangy@student.42antananari    +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 12:33:58 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/12/26 17:14:09 by pmihangy         ###   ########.fr       */
+/*   Updated: 2024/12/26 21:35:07 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	is_invalid_redirection(t_token *token)
 {
-	return (token == NULL || token->type != TOKEN_WORD);
+	return (token == NULL || token->type != ARG);
 }
 
 int	is_special_char(char c)

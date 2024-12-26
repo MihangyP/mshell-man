@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <pmihangy@student.42antanana      +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 11:40:23 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/02/21 11:43:51 by pmihangy         ###   ########.fr       */
+/*   Created: 2024/02/23 11:11:34 by irazafim          #+#    #+#             */
+/*   Updated: 2024/12/26 20:26:51 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

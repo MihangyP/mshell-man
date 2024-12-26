@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer_utils2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 12:27:21 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/12/26 14:13:02 by pmihangy         ###   ########.fr       */
+/*   Updated: 2024/12/26 21:54:20 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,9 @@ int	analyze_tokens(t_token *tokens)
 
 	current = tokens;
 	arg_count = 0;
-	while (current != NULL && current->type != TOKEN_EOF)
+	while (current != NULL && current->type != M_EOF)
 	{
-		if (current->type == TOKEN_WORD)
+		if (current->type == ARG)
 			arg_count++;
 		if (is_redirection(current->type))
 		{
@@ -88,7 +88,7 @@ int	analyze_tokens(t_token *tokens)
 				return (0);
 			arg_count++;
 		}
-		if (current->type == TOKEN_PIPE)
+		if (current->type == PIPE)
 		{
 			if (check_pipe(current, arg_count) == 0)
 				return (0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:37:33 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/12/26 12:54:35 by pmihangy         ###   ########.fr       */
+/*   Updated: 2024/12/26 21:54:58 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_token	*lexer(char *input)
 	}
 	if (current == NULL)
 		return (NULL);
-	current->next = create_token(TOKEN_EOF, "\0", &i, -1);
+	current->next = create_token(M_EOF, "\0", &i, -1);
 	return (head);
 }
 
@@ -46,30 +46,30 @@ t_token	*get_next_token(char *input, int *index)
 
 	fd = get_fd(input, index);
 	if (input[*index] == '|')
-		return (create_token(TOKEN_PIPE, "|", index, fd));
+		return (create_token(PIPE, "|", index, fd));
 	else if (input[*index] == '>')
 	{
 		if (input[*index + 1] == '>')
-			return (create_token(TOKEN_REDIR_APPEND, ">>", index, fd));
-		return (create_token(TOKEN_REDIR_OUT, ">", index, fd));
+			return (create_token(REDIRECT_APPEND, ">>", index, fd));
+		return (create_token(REDIRECT_OUT, ">", index, fd));
 	}
 	else if (input[*index] == '<')
 	{
 		if (input[*index + 1] == '>')
-			return (create_token(TOKEN_REDIR_IN_OUT, ">", index, fd));
+			return (create_token(REDIRECT_IN_OUT, ">", index, fd));
 		if (input[*index + 1] == '<')
-			return (create_token(TOKEN_HEREDOC, "<<", index, fd));
-		return (create_token(TOKEN_REDIR_IN, "<", index, fd));
+			return (create_token(HEREDOC, "<<", index, fd));
+		return (create_token(REDIRECT_IN, "<", index, fd));
 	}
 	else if (input[*index] == '\n')
-		return (create_token(TOKEN_NEWLINE, "\n", index, fd));
+		return (create_token(M_NEWLINE, "\n", index, fd));
 	else if (input[*index] == '\0')
-		return (create_token(TOKEN_EOF, "\0", index, fd));
+		return (create_token(M_EOF, "\0", index, fd));
 	else
 		return (get_token_word(input, index));
 }
 
-t_token	*create_token(t_tokentype type, const char *value, int *index,
+t_token	*create_token(t_token_opt type, const char *value, int *index,
 	int fd)
 {
 	t_token	*token;
@@ -100,7 +100,7 @@ t_token	*get_token_word(char *input, int *index)
 	ft_strlcpy(word, input + *index, len);
 	if (word == NULL)
 		return (NULL);
-	token = create_token(TOKEN_WORD, word, index, -1);
+	token = create_token(ARG, word, index, -1);
 	free(word);
 	return (token);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:57:02 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/12/26 14:06:12 by pmihangy         ###   ########.fr       */
+/*   Updated: 2024/12/26 22:02:40 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ int	check_redirection_exec(t_ast_node *ast, char **env, int in_pipe, int flag)
 	{
 		if (status == 0)
 			return (status);
-		if (ast->redirection[i].type_redirection == REDIRECTION_IN)
+		if (ast->redirection[i].type_redirection == IN)
 			status = redir_input(ast->redirection[i].target, ast, env, flag);
-		else if (ast->redirection[i].type_redirection == REDIRECTION_OUT)
+		else if (ast->redirection[i].type_redirection == OUT)
 			status = redir_output(ast->redirection[i].target, ast, env, flag);
-		else if (ast->redirection[i].type_redirection == REDIRECTION_APPEND)
+		else if (ast->redirection[i].type_redirection == APPEND)
 			status = output_append(ast->redirection[i].target, ast, env, flag);
-		else if (ast->redirection[i].type_redirection == REDIRECTION_HEREDOC)
+		else if (ast->redirection[i].type_redirection == O_HEREDOC)
 			status = here_doc(in_pipe, ast, env, flag);
 		i++;
 	}

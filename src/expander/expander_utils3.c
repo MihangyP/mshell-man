@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   expander_utils3.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmihangy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: irazafim <irazafim@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 12:01:30 by pmihangy          #+#    #+#             */
-/*   Updated: 2024/12/26 14:08:05 by pmihangy         ###   ########.fr       */
+/*   Updated: 2024/12/26 19:50:47 by irazafim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,9 @@ char	*expand_special_char(char *str, char **env, int *i, int exit_code)
 	}
 	else
 	{
+		result = NULL;
 		var_value = expand_env_var(str + *i + 1, env);
-		result = (char *)malloc(sizeof(char) * (ft_strlen(var_value) + 3));
+		result = (char *)ft_calloc((ft_strlen(var_value) + 3), sizeof(char));
 		result[0] = '"';
 		ft_strlcpy(result + 1, var_value, ft_strlen(var_value) + 1);
 		result[ft_strlen(var_value) + 1] = '"';
